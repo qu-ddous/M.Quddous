@@ -1,0 +1,230 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id               String         @id @default(cuid())
+  email            String         @unique
+  password         String
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  role             UserRole
+  assistant        Assistant?
+  doctor           Doctor?
+  receivedMessages Message[]      @relation("ReceivedMessages")
+  sentMessages     Message[]      @relation("SentMessages")
+  notifications    Notification[]
+  patient          Patient?
+
+  @@index([role])
+  @@index([email], map: "idx_user_email")
+}
+
+model Patient {
+  id             String          @id @default(cuid())
+  userId         String          @unique
+  fullName       String
+  phone          String?
+  dateOfBirth    DateTime?
+  address        String?
+  bloodType      String?
+  allergies      String?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  appointments   Appointment[]
+  medicalReports MedicalReport[]
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  payments       Payment[]
+
+  @@index([userId], map: "idx_patient_user")
+}
+
+model Doctor {
+  id             String               @id @default(cuid())
+  userId         String               @unique
+  fullName       String
+  phone          String?
+  specialization String
+  experience     Int
+  qualification  String
+  fee            Float
+  about          String?
+  isApproved     Boolean              @default(false)
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime             @updatedAt
+  appointments   Appointment[]
+  user           User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  availability   DoctorAvailability[]
+  prescriptions  Prescription[]
+
+  @@index([isApproved], map: "idx_doctor_approved")
+  @@index([specialization], map: "idx_doctor_specialization")
+  @@index([userId], map: "idx_doctor_user")
+}
+
+model Assistant {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  fullName  String
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId], map: "idx_assistant_user")
+}
+
+model Appointment {
+  id           String            @id @default(cuid())
+  patientId    String
+  doctorId     String
+  date         DateTime
+  timeSlot     String
+  reason       String?
+  notes        String?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  status       AppointmentStatus @default(PENDING)
+  doctor       Doctor            @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  patient      Patient           @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  payment      Payment?
+  prescription Prescription?
+
+  @@index([patientId])
+  @@index([doctorId])
+  @@index([date])
+  @@index([status])
+}
+
+model DoctorAvailability {
+  id          String   @id @default(cuid())
+  doctorId    String
+  date        DateTime
+  timeSlots   String
+  isAvailable Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  doctor      Doctor   @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+
+  @@index([date], map: "idx_availability_date")
+  @@index([doctorId], map: "idx_availability_doctor")
+}
+
+model Payment {
+  id            String        @id @default(cuid())
+  patientId     String
+  appointmentId String?       @unique
+  amount        Float
+  proofUrl      String?
+  verifiedBy    String?
+  verifiedAt    DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  method        PaymentMethod
+  status        PaymentStatus @default(PENDING)
+  appointment   Appointment?  @relation(fields: [appointmentId], references: [id])
+  patient       Patient       @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  @@index([status])
+  @@index([appointmentId], map: "idx_payment_appointment")
+  @@index([patientId], map: "idx_payment_patient")
+}
+
+model Prescription {
+  id            String      @id @default(cuid())
+  appointmentId String      @unique
+  doctorId      String
+  diagnosis     String
+  medicines     String
+  notes         String?
+  pdfUrl        String?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  appointment   Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
+  doctor        Doctor      @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+
+  @@index([appointmentId], map: "idx_prescription_appointment")
+  @@index([doctorId], map: "idx_prescription_doctor")
+}
+
+model MedicalReport {
+  id         String   @id @default(cuid())
+  patientId  String
+  title      String
+  type       String
+  fileUrl    String
+  fileUrl2   String?
+  fileUrl3   String?
+  uploadedAt DateTime @default(now())
+  patient    Patient  @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  @@index([patientId], map: "idx_report_patient")
+  @@index([type], map: "idx_report_type")
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  senderId   String
+  receiverId String
+  content    String
+  isRead     Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  receiver   User     @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+  sender     User     @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+
+  @@index([receiverId], map: "idx_message_receiver")
+  @@index([senderId], map: "idx_message_sender")
+}
+
+model Notification {
+  id        String           @id @default(cuid())
+  userId    String
+  title     String
+  message   String
+  isRead    Boolean          @default(false)
+  createdAt DateTime         @default(now())
+  type      NotificationType
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([type])
+  @@index([userId], map: "idx_notification_user")
+}
+
+enum UserRole {
+  PATIENT
+  DOCTOR
+  ASSISTANT
+  ADMIN
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum PaymentMethod {
+  EASYPAISA
+  JAZZCASH
+  BANK_TRANSFER
+}
+
+enum NotificationType {
+  APPOINTMENT
+  PAYMENT
+  MESSAGE
+  SYSTEM
+}

@@ -1,0 +1,286 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(135deg, #0B0F2A 0%, #1a1f4a 100%);
+    color: white;
+    min-height: 100vh;
+  }
+  
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(124, 58, 237, 0.5) rgba(11, 15, 42, 0.3);
+  }
+  
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: rgba(11, 15, 42, 0.3);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: rgba(124, 58, 237, 0.5);
+    border-radius: 4px;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(124, 58, 237, 0.8);
+  }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+}
+
+.neon-glow {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5), 0 0 40px rgba(59, 130, 246, 0.3);
+}
+
+.neon-glow:hover {
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.8), 0 0 60px rgba(59, 130, 246, 0.5);
+}
+
+.bg-glass-200 {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.bg-glass-300 {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.icon-3d {
+  display: inline-block;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.icon-3d:hover {
+  transform: translateY(-5px) rotateX(10deg) rotateY(-10deg);
+  filter: drop-shadow(4px 8px 12px rgba(0, 0, 0, 0.4));
+}
+
+.icon-3d-doctor {
+  animation: doctor-float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.5), 0 0 40px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.8), 0 0 80px rgba(59, 130, 246, 0.5);
+  }
+}
+
+@keyframes rotate-3d {
+  0% {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg) rotateX(10deg);
+  }
+}
+
+@keyframes bounce-3d {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+}
+
+@keyframes doctor-float {
+  0%, 100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotateY(5deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(0deg);
+  }
+  75% {
+    transform: translateY(-10px) rotateY(-5deg);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-rotate-3d {
+  animation: rotate-3d 10s linear infinite;
+}
+
+.animate-bounce-3d {
+  animation: bounce-3d 3s ease-in-out infinite;
+}
+
+/* ── Hero Dashboard Card ─────────────────────────────── */
+.hero-dashboard-card {
+  background: rgba(15, 20, 60, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, 0.1),
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 80px rgba(99, 102, 241, 0.15);
+  animation: hero-card-float 5s ease-in-out infinite;
+}
+
+@keyframes hero-card-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* Avatar ring */
+.hero-avatar-ring {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  padding: 3px;
+  background: conic-gradient(from 0deg, #a78bfa, #3b82f6, #ec4899, #a78bfa);
+  flex-shrink: 0;
+  animation: avatar-ring-spin 3s linear infinite;
+}
+
+@keyframes avatar-ring-spin {
+  to { transform: rotate(360deg); }
+}
+
+.hero-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #1e1b4b;
+}
+
+/* Status dot */
+.hero-status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+  animation: status-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px #22c55e; }
+  50%       { opacity: 0.5; box-shadow: 0 0 14px #22c55e; }
+}
+
+/* ECG container */
+.hero-pulse-bar {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px 12px 8px;
+}
+
+.hero-ecg-container {
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.hero-ecg-line {
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: ecg-draw 2.5s ease-in-out infinite;
+}
+
+@keyframes ecg-draw {
+  0%   { stroke-dashoffset: 700; opacity: 0.3; }
+  60%  { stroke-dashoffset: 0;   opacity: 1; }
+  100% { stroke-dashoffset: -700; opacity: 0.3; }
+}
+
+/* Stat cards */
+.hero-stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.hero-stat-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.hero-stat-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 6px;
+}
+
+/* Next appointment card */
+.hero-appointment-card {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+/* Floating badges */
+.hero-float-badge-1 {
+  animation: badge-float-1 3s ease-in-out infinite;
+  z-index: 10;
+}
+
+.hero-float-badge-2 {
+  animation: badge-float-2 3.5s ease-in-out infinite;
+  z-index: 10;
+}
+
+@keyframes badge-float-1 {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%       { transform: translateY(-6px) rotate(2deg); }
+}
+
+@keyframes badge-float-2 {
+  0%, 100% { transform: translateY(0) rotate(2deg); }
+  50%       { transform: translateY(6px) rotate(-2deg); }
+}
