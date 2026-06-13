@@ -51,34 +51,7 @@ A comprehensive healthcare management platform connecting patients with doctors,
 - **Socket.io Client** - Real-time communication
 - **Lucide React** - Icons
 
-## 📁 Project Structure
 
-```
-doctor-hub/
-├── backend/              # Node.js + Express backend
-│   ├── src/
-│   │   ├── config/      # Database configuration
-│   │   ├── controllers/ # API controllers
-│   │   ├── middleware/  # Auth, error handling
-│   │   ├── routes/      # API routes
-│   │   ├── utils/       # Utility functions
-│   │   └── server.js    # Main server file
-│   ├── prisma/
-│   │   ├── schema.prisma # Database schema
-│   │   └── seed.js      # Seed data
-│   ├── .env.example     # Environment variables template
-│   └── package.json
-└── frontend/            # React + Vite frontend
-    ├── src/
-    │   ├── components/  # Reusable UI components
-    │   ├── context/     # React context providers
-    │   ├── pages/       # Page components
-    │   ├── services/    # API service functions
-    │   ├── lib/         # Utility functions
-    │   └── App.jsx      # Main app component
-    ├── src/.env.example # Environment variables template
-    └── package.json
-```
 
 ## 🚀 Getting Started
 
@@ -172,17 +145,6 @@ The frontend will run on `http://localhost:5173`
 - Email: admin@doctorhub.com
 - Password: admin123
 
-### Patient
-- Email: patient1@example.com
-- Password: patient123
-
-### Doctor
-- Email: doctor1@example.com
-- Password: doctor123
-
-### Assistant
-- Email: assistant@doctorhub.com
-- Password: assistant123
 
 ## 📊 Database Schema
 
@@ -213,52 +175,7 @@ See `backend/prisma/schema.prisma` for complete schema details.
 - XSS prevention
 - CORS configuration
 
-## 🌐 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login user
-- `GET /api/auth/profile` - Get user profile
-
-### Doctors
-- `GET /api/doctors` - Get all doctors
-- `GET /api/doctors/:id` - Get doctor by ID
-- `PUT /api/doctors/:id` - Update doctor profile
-- `GET /api/doctors/:doctorId/availability` - Get doctor availability
-- `POST /api/doctors/:doctorId/availability` - Set doctor availability
-
-### Appointments
-- `POST /api/appointments` - Create appointment
-- `GET /api/appointments` - Get appointments
-- `GET /api/appointments/:id` - Get appointment by ID
-- `PUT /api/appointments/:id/status` - Update appointment status
-
-### Payments
-- `POST /api/payments` - Create payment
-- `GET /api/payments` - Get payments
-- `PUT /api/payments/:id/verify` - Verify payment
-
-### Patients
-- `GET /api/patients/profile` - Get patient profile
-- `PUT /api/patients/profile` - Update patient profile
-- `POST /api/patients/reports` - Upload medical report
-- `GET /api/patients/reports` - Get medical reports
-
-### Messages
-- `POST /api/messages` - Send message
-- `GET /api/messages/:otherUserId` - Get conversation
-- `PUT /api/messages/:id/read` - Mark message as read
-
-### Notifications
-- `GET /api/notifications` - Get notifications
-- `PUT /api/notifications/:id/read` - Mark notification as read
-- `PUT /api/notifications/read-all` - Mark all as read
-
-### Prescriptions
-- `POST /api/prescriptions` - Create prescription
-- `GET /api/prescriptions/appointment/:appointmentId` - Get prescription
-
-## 🎨 UI Features
+# 🎨 UI Features
 
 - **Dark/Light Mode** - Toggle between themes
 - **Responsive Design** - Works on all screen sizes
@@ -293,30 +210,32 @@ See `backend/prisma/schema.prisma` for complete schema details.
 1. Build the frontend: `npm run build`
 2. Deploy to Vercel, Netlify, or any static hosting platform
 3. Configure environment variables
+<img width="1903" height="1026" alt="L1" src="https://github.com/user-attachments/assets/fdeee0bb-1b90-46d2-b4e1-1e72bbb1fc3f" />
+<img width="1917" height="1027" alt="L2" src="https://github.com/user-attachments/assets/00dc8223-3efd-4570-abce-b1ab53f9e11a" />
+<img width="1920" height="872" alt="L3" src="https://github.com/user-attachments/assets/eff99b5e-53d4-40e4-bed2-4297d6d2dc50" />
+<img width="1905" height="878" alt="L5" src="https://github.com/user-attachments/assets/f97d13fb-ff4f-4147-8c15-8434a57ff8c6" />
+<img width="1907" height="867" alt="Login" src="https://github.com/user-attachments/assets/af4120c0-289c-4576-959b-346986aea54c" />
+<img width="1842" height="865" alt="login1" src="https://github.com/user-attachments/assets/78cddd33-8d43-4442-bf5d-2e87cc984691" />
+<img width="1740" height="865" alt="regiter" src="https://github.com/user-attachments/assets/423fbc97-f9dd-4736-b282-da8a05cf32e7" />
+<img width="1917" height="1022" alt="admin" src="https://github.com/user-attachments/assets/5132cdc0-3e1b-439a-bf6c-2346ac9c2ea9" />
+<img width="1920" height="867" alt="admin 1" src="https://github.com/user-attachments/assets/009b47fb-1e65-4bf7-b34b-f35cd01fcc11" />
+<img width="1915" height="876" alt="admin 2" src="https://github.com/user-attachments/assets/253911b8-2a43-4809-92b9-7df32bf6bf08" />
+<img width="1920" height="856" alt="admin 3" src="https://github.com/user-attachments/assets/d6a129aa-2828-438d-af84-b13ff1dfcc22" />
+<img width="1920" height="861" alt="admin 4" src="https://github.com/user-<img width="1912" height="1028" alt="patient" src="https://github.com/user-attachments/assets/597677f8-a732-4499-add7-aad0af86fcb5" />
+attachments/assets/99e2cb93-05cf-45b8-a73e-c581147372b6" />
+<img width="1915" height="885" alt="patient 1" src="https://github.com/user-attachments/assets/70e0e1c0-c2de-4856-afc6-3c52eef316b2" />
+<img width="1918" height="847" alt="patient 2" src="https://github.com/user-attachments/assets/b9cfe8f2-7108-4581-af0c-808f86c50fd6" />
+<img width="1887" height="883" alt="patient 3" src="https://github.com/user-attachments/assets/c7a1ad42-7867-46d6-8961-5c5b7e4215f0" />
+<img width="1906" height="1032" alt="doctor " src="https://github.com/user-attachments/assets/6169fcd1-e585-4e61-8e37-f3407779f1d5" />
+<img width="1912" height="883" alt="doctor1" src="https://github.com/user-attachments/assets/0cae2638-898e-4589-95f4-721fa8145910" />
+<img width="1916" height="892" alt="doctor 2" src="https://github.com/user-attachments/assets/85708b2f-a003-4142-8e7d-f5a4ea6ddc35" />
+<img width="1908" height="860" alt="doctor 3" src="https://github.com/user-attachments/assets/57bc7057-a536-4f71-91eb-e40300cdd275" />
+<img width="1913" height="887" alt="doctor 4" src="https://github.com/user-attachments/assets/4296b06a-a00d-48b4-ab27-a16f189097ce" />
+<img width="1890" height="888" alt="doctor 5" src="https://github.com/user-attachments/assets/95e28879-abbb-4c86-8979-815fd00c4a3d" />
+<img width="1920" height="875" alt="assistent" src="https://github.com/user-attachments/assets/bffc84ab-8b1f-4eaa-a71d-e488e113bb83" />
+<img width="1920" height="877" alt="assitent 1" src="https://github.com/user-attachments/assets/2e434996-3e0c-45be-9029-180a43c1d879" />
+<img width="1896" height="856" alt="assitne t3" src="https://github.com/user-attachments/assets/4d31113a-24f1-4dd1-bd98-495705db3ff1" />
+<img width="1917" height="887" alt="assitn 4" src="https://github.com/user-attachments/assets/ea719dd4-5fe7-4830-aeb6-5abe9084deb1" />
 
-## 📝 Future Enhancements
 
-- [ ] Video consultation integration with WebRTC
-- [ ] Email/SMS notifications (SendGrid, Twilio)
-- [ ] Cloud storage integration (Supabase Storage)
-- [ ] Advanced analytics dashboard
-- [ ] Mobile app (React Native)
-- [ ] AI-powered doctor recommendations
-- [ ] Integration with health wearables
 
-## 🤝 Contributing
-
-This is a Final Year Project (FYP) level application. Contributions are welcome!
-
-## 📄 License
-
-This project is for educational purposes.
-
-## 👨‍💻 Authors
-
-- Developed as a Final Year Project
-
-## 🙏 Acknowledgments
-
-- UI design inspiration from modern healthcare platforms
-- Open-source libraries and tools used
