@@ -210,31 +210,32 @@ See `backend/prisma/schema.prisma` for complete schema details.
 1. Build the frontend: `npm run build`
 2. Deploy to Vercel, Netlify, or any static hosting platform
 3. Configure environment variables
-<img width="1903" height="1026" alt="L1" src="https://github.com/user-attachments/assets/98ccc083-fcfe-4786-99b9-73870fe42be1" />
-<img width="1890" height="888" alt="doctor 5" src="https://github.com/user-attachments/assets/53499c5f-46ae-4147-b223-08571579830e" />
-<img width="1913" height="887" alt="doctor 4" src="https://github.com/user-attachments/assets/53b4723a-9ac3-4483-8d4c-b74e8946dcbf" />
-<img width="1908" height="860" alt="doctor 3" src="https://github.com/user-attachments/assets/de57476e-1bad-4b3a-be12-0249230e797d" />
-<img width="1916" height="892" alt="doctor 2" src="https://github.com/user-attachments/assets/d67cead2-d9be-45ec-9011-f331040b8ea0" />
-<img width="1912" height="883" alt="doctor1" src="https://github.com/user-attachments/assets/72803ab6-ae74-48e3-80f7-c231dcd75bc8" />
-<img width="1906" height="1032" alt="doctor " src="https://github.com/user-attachments/assets/478fe3ea-ccb4-438c-876e-cdd0f5b2004e" />
-<img width="1887" height="883" alt="patient 3" src="https://github.com/user-attachments/assets/6d86c020-7162-41da-9347-671aee62fea3" />
-<img width="1918" height="847" alt="patient 2" src="https://github.com/user-attachments/assets/aee1d881-d112-4e1e-a1d8-ff450140b48f" />
-<img width="1915" height="885" alt="patient 1" src="https://github.com/user-attachments/assets/e0579844-849d-4ca4-956e-719f31385445" />
-<img width="1912" height="1028" alt="patient" src="https://github.com/user-attachments/assets/3e149c72-da21-44f7-b632-cbf4f170c0ee" />
-<img width="1920" height="861" alt="admin 4" src="https://github.com/user-attachments/assets/b989e6c4-9e3f-4d7d-be28-4b369beb947d" />
-<img width="1920" height="856" alt="admin 3" src="https://github.com/user-attachments/assets/96f9a851-4c64-4732-9fe7-4ed09aa5e525" />
-<img width="1915" height="876" alt="admin 2" src="https://github.com/user-attachments/assets/8d4f23e0-f9e1-4c8f-8660-9105538f5fce" />
-<img width="1917" height="887" alt="assitn 4" src="https://github.com/user-attachments/assets/53a0b024-2e15-467a-a1ae-ed6c82d35171" />
-<img width="1896" height="856" alt="assitne t3" src="https://github.com/user-attachments/assets/c7fb4f2b-608e-4093-b3ed-c2a024ee842d" />
-<img width="1920" height="877" alt="assitent 1" src="https://github.com/user-attachments/assets/829b56b9-d67a-48c4-8ac1-ab4bc227e2b0" />
-<img width="1920" height="875" alt="assistent" src="https://github.com/user-attachments/assets/0dd38e3b-802a-49e1-bc60-d23cf2b171e2" />
-<img width="1920" height="867" alt="admin 1" src="https://github.com/user-attachments/assets/a7b2b894-8854-4045-9521-1201ac80a695" />
-<img width="1917" height="1022" alt="admin" src="https://github.com/user-attachments/assets/651c3206-4576-4df1-98a6-578bc7e3016b" />
-<img width="1740" height="865" alt="regiter" src="https://github.com/user-attachments/assets/ea393c5d-3f74-41b1-90ec-de5dfde8f540" />
-<img width="1842" height="865" alt="login1" src="https://github.com/user-attachments/assets/c43a4410-564d-4810-86a5-fc374e3cba95" />
-<img width="1907" height="867" alt="Login" src="https://github.com/user-attachments/assets/2d2e6c0d-d17b-43d9-99d2-9191a6bbb902" />
-<img width="1905" height="878" alt="L5" src="https://github.com/user-attachments/assets/05101f64-c83a-4623-a5e8-3731d8cd746e" />
-<img width="1920" height="872" alt="L3" src="https://github.com/user-attachments/assets/ee68c657-6757-4c8f-a2a6-ac6a24f794eb" />
-<img width="1917" height="1027" alt="L2" src="https://github.com/user-attachments/assets/0a8d21cf-5529-4b37-b8ca-914d712ee482" />
+<img width="1903" height="1026" alt="L1" src="https://github.com/user-attachments/assets/fdeee0bb-1b90-46d2-b4e1-1e72bbb1fc3f" />
+<img width="1917" height="1027" alt="L2" src="https://github.com/user-attachments/assets/00dc8223-3efd-4570-abce-b1ab53f9e11a" />
+<img width="1920" height="872" alt="L3" src="https://github.com/user-attachments/assets/eff99b5e-53d4-40e4-bed2-4297d6d2dc50" />
+<img width="1905" height="878" alt="L5" src="https://github.com/user-attachments/assets/f97d13fb-ff4f-4147-8c15-8434a57ff8c6" />
+<img width="1907" height="867" alt="Login" src="https://github.com/user-attachments/assets/af4120c0-289c-4576-959b-346986aea54c" />
+<img width="1842" height="865" alt="login1" src="https://github.com/user-attachments/assets/78cddd33-8d43-4442-bf5d-2e87cc984691" />
+<img width="1740" height="865" alt="regiter" src="https://github.com/user-attachments/assets/423fbc97-f9dd-4736-b282-da8a05cf32e7" />
+<img width="1917" height="1022" alt="admin" src="https://github.com/user-attachments/assets/5132cdc0-3e1b-439a-bf6c-2346ac9c2ea9" />
+<img width="1920" height="867" alt="admin 1" src="https://github.com/user-attachments/assets/009b47fb-1e65-4bf7-b34b-f35cd01fcc11" />
+<img width="1915" height="876" alt="admin 2" src="https://github.com/user-attachments/assets/253911b8-2a43-4809-92b9-7df32bf6bf08" />
+<img width="1920" height="856" alt="admin 3" src="https://github.com/user-attachments/assets/d6a129aa-2828-438d-af84-b13ff1dfcc22" />
+<img width="1920" height="861" alt="admin 4" src="https://github.com/user-<img width="1912" height="1028" alt="patient" src="https://github.com/user-attachments/assets/597677f8-a732-4499-add7-aad0af86fcb5" />
+attachments/assets/99e2cb93-05cf-45b8-a73e-c581147372b6" />
+<img width="1915" height="885" alt="patient 1" src="https://github.com/user-attachments/assets/70e0e1c0-c2de-4856-afc6-3c52eef316b2" />
+<img width="1918" height="847" alt="patient 2" src="https://github.com/user-attachments/assets/b9cfe8f2-7108-4581-af0c-808f86c50fd6" />
+<img width="1887" height="883" alt="patient 3" src="https://github.com/user-attachments/assets/c7a1ad42-7867-46d6-8961-5c5b7e4215f0" />
+<img width="1906" height="1032" alt="doctor " src="https://github.com/user-attachments/assets/6169fcd1-e585-4e61-8e37-f3407779f1d5" />
+<img width="1912" height="883" alt="doctor1" src="https://github.com/user-attachments/assets/0cae2638-898e-4589-95f4-721fa8145910" />
+<img width="1916" height="892" alt="doctor 2" src="https://github.com/user-attachments/assets/85708b2f-a003-4142-8e7d-f5a4ea6ddc35" />
+<img width="1908" height="860" alt="doctor 3" src="https://github.com/user-attachments/assets/57bc7057-a536-4f71-91eb-e40300cdd275" />
+<img width="1913" height="887" alt="doctor 4" src="https://github.com/user-attachments/assets/4296b06a-a00d-48b4-ab27-a16f189097ce" />
+<img width="1890" height="888" alt="doctor 5" src="https://github.com/user-attachments/assets/95e28879-abbb-4c86-8979-815fd00c4a3d" />
+<img width="1920" height="875" alt="assistent" src="https://github.com/user-attachments/assets/bffc84ab-8b1f-4eaa-a71d-e488e113bb83" />
+<img width="1920" height="877" alt="assitent 1" src="https://github.com/user-attachments/assets/2e434996-3e0c-45be-9029-180a43c1d879" />
+<img width="1896" height="856" alt="assitne t3" src="https://github.com/user-attachments/assets/4d31113a-24f1-4dd1-bd98-495705db3ff1" />
+<img width="1917" height="887" alt="assitn 4" src="https://github.com/user-attachments/assets/ea719dd4-5fe7-4830-aeb6-5abe9084deb1" />
+
 
 
